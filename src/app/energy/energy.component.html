@@ -5,58 +5,125 @@
   (matSortChange)="announceSortChange($event)"
   class="mat-elevation-z8"
 >
-  <!-- Position Column -->
-  <ng-container matColumnDef="position">
+  <ng-container matColumnDef="Name">
     <th
       mat-header-cell
       *matHeaderCellDef
       mat-sort-header
-      sortActionDescription="Sort by number"
+      sortActionDescription="Sort by Name"
     >
-      No.
+      <span class="table-header"> Name </span>
     </th>
-    <td mat-cell *matCellDef="let element">{{ element.position }}</td>
+    <td mat-cell *matCellDef="let element">{{ element.Name }}</td>
   </ng-container>
 
-  <!-- Name Column -->
-  <ng-container matColumnDef="name">
+  <ng-container matColumnDef="Alerts">
     <th
       mat-header-cell
       *matHeaderCellDef
       mat-sort-header
-      sortActionDescription="Sort by name"
+      sortActionDescription="Sort by Alerts"
     >
-      Name
+      <span class="table-header"> Alerts </span>
     </th>
-    <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+    <td mat-cell *matCellDef="let element">
+      <mat-grid-list cols="3">
+        <mat-grid-tile colspan="1">
+          <div class="alerts-high">
+            <div [class]="element.Alerts.high.count ? 'active' : 'inactive'">
+              {{ element.Alerts.high.count }}
+            </div>
+          </div>
+        </mat-grid-tile>
+        <mat-grid-tile colspan="1">
+          <div class="alerts-med">
+            <div [class]="element.Alerts.med.count ? 'active' : 'inactive'">
+              {{ element.Alerts.med.count }}
+            </div>
+          </div>
+        </mat-grid-tile>
+        <mat-grid-tile colspan="1">
+          <div class="alerts-low">
+            <div [class]="element.Alerts.low.count ? 'active' : 'inactive'">
+              {{ element.Alerts.low.count }}
+            </div>
+          </div>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </td>
   </ng-container>
 
-  <!-- Weight Column -->
-  <ng-container matColumnDef="weight">
+  <ng-container matColumnDef="Savings">
     <th
       mat-header-cell
       *matHeaderCellDef
       mat-sort-header
-      sortActionDescription="Sort by weight"
+      sortActionDescription="Sort by Saving"
     >
-      Weight
+      <span class="table-header"> Savings </span>
     </th>
-    <td mat-cell *matCellDef="let element">{{ element.weight }}</td>
+    <td mat-cell *matCellDef="let element">
+      <span
+        [class]="
+          element.Savings.substring(0, element.Savings.length - 1) < 70
+            ? 'danger'
+            : 'normal'
+        "
+      >
+        {{ element.Savings }}
+      </span>
+    </td>
   </ng-container>
 
-  <!-- Symbol Column -->
-  <ng-container matColumnDef="symbol">
+  <ng-container matColumnDef="Uptime">
     <th
       mat-header-cell
       *matHeaderCellDef
       mat-sort-header
-      sortActionDescription="Sort by symbol"
+      sortActionDescription="Sort by Uptime"
     >
-      Symbol
+      <span class="table-header"> Uptime </span>
     </th>
-    <td mat-cell *matCellDef="let element">{{ element.symbol }}</td>
+    <td mat-cell *matCellDef="let element">
+      <span
+        [class]="
+          element.Uptime.substring(0, element.Uptime.length - 1) < 100
+            ? 'danger'
+            : 'normal'
+        "
+      >
+        {{ element.Uptime }}
+      </span>
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="Power">
+    <th
+      mat-header-cell
+      *matHeaderCellDef
+      mat-sort-header
+      sortActionDescription="Sort by Power"
+    >
+      <span class="table-header"> Power </span>
+    </th>
+    <td mat-cell *matCellDef="let element">
+      <div class="power">
+        {{ element.Power.substring(0, element.Power.length - 2)
+        }}<small>{{
+          element.Power.substring(
+            element.Power.length - 2,
+            element.Power.length
+          )
+        }}</small>
+      </div>
+    </td>
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  <tr
+    mat-row
+    (click)="handleClick(row)"
+    *matRowDef="let row; columns: displayedColumns"
+    class="building-element"
+  ></tr>
 </table>

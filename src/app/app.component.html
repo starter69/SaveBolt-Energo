@@ -16,7 +16,7 @@
         </mat-list-item>
       </mat-list>
     </mat-drawer>
-    <mat-drawer-content class="main-content">
+    <mat-drawer-content>
       <mat-toolbar>
         <button
           mat-icon-button
@@ -36,8 +36,15 @@
           <mat-icon>keyboard_arrow_down</mat-icon>
         </button>
       </mat-toolbar>
-
-      <app-energy></app-energy>
+      <div class="main-content">
+        <mat-grid-list cols="3">
+          <h1 class="title">Dashboard</h1>
+          <mat-grid-tile colspan="2">
+            <app-energy style="width: 100%"></app-energy>
+          </mat-grid-tile>
+          <mat-grid-tile colspan="1"> Alerts </mat-grid-tile>
+        </mat-grid-list>
+      </div>
     </mat-drawer-content>
   </mat-drawer-container>
 </div>

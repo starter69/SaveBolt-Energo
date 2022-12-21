@@ -12,6 +12,7 @@ import { MatButtonModule } from "@angular/material/button";
 import { MatDividerModule } from "@angular/material/divider";
 import { MatTableModule } from "@angular/material/table";
 import { MatSortModule } from "@angular/material/sort";
+import { MatGridListModule } from "@angular/material/grid-list";
 
 import { EnergyComponent } from "./energy/energy.component";
 
@@ -29,6 +30,7 @@ import { EnergyComponent } from "./energy/energy.component";
     MatDividerModule,
     MatTableModule,
     MatSortModule,
+    MatGridListModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
