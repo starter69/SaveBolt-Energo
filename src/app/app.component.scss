@@ -1,12 +1,35 @@
 .app-root {
   .mat-icon {
-    vertical-align: text-bottom;
+    vertical-align: text-top;
     margin-right: 10px;
   }
 
   .drawer-container {
     height: 100vh;
-    overflow-y: scroll;
+    overflow-y: auto;
+
+    .main-content {
+      .mat-toolbar {
+        justify-content: end;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+          rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+
+        .username {
+          font-size: 18px;
+        }
+
+        .mat-icon {
+          font-size: 26px;
+          color: rgb(157, 157, 157);
+        }
+
+        .vertical-devider {
+          height: 30px;
+          color: rgb(157, 157, 157);
+          margin: auto 30px;
+        }
+      }
+    }
 
     .drawer-content {
       background-color: rgb(41, 71, 118);

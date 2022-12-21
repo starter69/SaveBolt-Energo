@@ -14,6 +14,26 @@
         </mat-list-item>
       </mat-list>
     </mat-drawer>
-    <mat-drawer-content class="main-content">Main content</mat-drawer-content>
+    <mat-drawer-content class="main-content">
+      <mat-toolbar>
+        <button
+          mat-icon-button
+          aria-label="Icon-button with notifications icon"
+        >
+          <mat-icon>notifications</mat-icon>
+        </button>
+        <button mat-icon-button aria-label="Icon-button with mail icon">
+          <mat-icon>mail</mat-icon>
+        </button>
+        <mat-divider vertical class="vertical-devider"></mat-divider>
+        <button mat-icon-button aria-label="Icon-button with mail icon">
+          <mat-icon>account_circle</mat-icon>
+        </button>
+        <span class="username"> Bullen Ziewcki </span>
+        <button mat-icon-button aria-label="Icon-button with mail icon">
+          <mat-icon>keyboard_arrow_down</mat-icon>
+        </button>
+      </mat-toolbar>
+    </mat-drawer-content>
   </mat-drawer-container>
 </div>
