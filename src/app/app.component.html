@@ -1,1 +1,19 @@
-<h1>{{ title }}</h1>
+<div class="app-root">
+  <mat-drawer-container class="drawer-container">
+    <mat-drawer mode="side" opened class="drawer-content">
+      <div class="logo">ENERGO</div>
+      <mat-list class="navbar">
+        <mat-list-item *ngFor="let link of links" class="nav-item">
+          <mat-icon
+            aria-hidden="false"
+            aria-label="Example home icon"
+            [fontIcon]="link.icon"
+          >
+          </mat-icon>
+          {{ link.name }}
+        </mat-list-item>
+      </mat-list>
+    </mat-drawer>
+    <mat-drawer-content class="main-content">Main content</mat-drawer-content>
+  </mat-drawer-container>
+</div>
