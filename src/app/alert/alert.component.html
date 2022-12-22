@@ -1,0 +1,22 @@
+<div class="alerts">
+  <div class="title">Alerts</div>
+  <div class="detail">
+    <h2 class="name">
+      {{ building.Name }}
+    </h2>
+    <div *ngIf="details.length; else message">
+      <div *ngFor="let item of details">
+        <div class="info">
+          <div class="name">{{ item.metric }}</div>
+          <div class="d-flex">
+            <div class="value">Value: {{ item.value + " " + item.unit }}</div>
+            <div class="time">{{ item.time }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ng-template #message>
+      <p class="message">There is no alerts here.</p>
+    </ng-template>
+  </div>
+</div>

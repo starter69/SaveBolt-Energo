@@ -1,0 +1,123 @@
+<table
+  mat-table
+  [dataSource]="dataSource"
+  matSort
+  (matSortChange)="announceSortChange($event)"
+  class="mat-elevation-z8"
+>
+  <ng-container matColumnDef="Name">
+    <th
+      mat-header-cell
+      *matHeaderCellDef
+      mat-sort-header
+      sortActionDescription="Sort by Name"
+    >
+      <span class="table-header"> Name </span>
+    </th>
+    <td mat-cell *matCellDef="let element">
+      <span class="name">{{ element.Name }}</span>
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="Alerts">
+    <th
+      mat-header-cell
+      *matHeaderCellDef
+      mat-sort-header
+      sortActionDescription="Sort by Alerts"
+    >
+      <span class="table-header"> Alerts </span>
+    </th>
+    <td mat-cell *matCellDef="let element" style="display: flex">
+      <div class="alerts-high">
+        <div [class]="element.Alerts.high.count ? 'active' : 'inactive'">
+          {{ element.Alerts.high.count }}
+        </div>
+      </div>
+      <div class="alerts-med">
+        <div [class]="element.Alerts.med.count ? 'active' : 'inactive'">
+          {{ element.Alerts.med.count }}
+        </div>
+      </div>
+      <div class="alerts-low">
+        <div [class]="element.Alerts.low.count ? 'active' : 'inactive'">
+          {{ element.Alerts.low.count }}
+        </div>
+      </div>
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="Savings">
+    <th
+      mat-header-cell
+      *matHeaderCellDef
+      mat-sort-header
+      sortActionDescription="Sort by Saving"
+    >
+      <span class="table-header"> Savings </span>
+    </th>
+    <td mat-cell *matCellDef="let element">
+      <span
+        [class]="
+          element.Savings.substring(0, element.Savings.length - 1) < 70
+            ? 'danger'
+            : 'normal'
+        "
+      >
+        {{ element.Savings }}
+      </span>
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="Uptime">
+    <th
+      mat-header-cell
+      *matHeaderCellDef
+      mat-sort-header
+      sortActionDescription="Sort by Uptime"
+    >
+      <span class="table-header"> Uptime </span>
+    </th>
+    <td mat-cell *matCellDef="let element">
+      <span
+        [class]="
+          element.Uptime.substring(0, element.Uptime.length - 1) < 100
+            ? 'danger'
+            : 'normal'
+        "
+      >
+        {{ element.Uptime }}
+      </span>
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="Power">
+    <th
+      mat-header-cell
+      *matHeaderCellDef
+      mat-sort-header
+      sortActionDescription="Sort by Power"
+    >
+      <span class="table-header"> Power </span>
+    </th>
+    <td mat-cell *matCellDef="let element">
+      <div class="power">
+        {{ element.Power.substring(0, element.Power.length - 2)
+        }}<small>{{
+          element.Power.substring(
+            element.Power.length - 2,
+            element.Power.length
+          )
+        }}</small>
+      </div>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr
+    mat-row
+    (click)="clickBuilding(row)"
+    *matRowDef="let row; columns: displayedColumns"
+    class="building-element"
+  ></tr>
+</table>

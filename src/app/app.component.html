@@ -1,1 +1,52 @@
-<h1>{{ title }}</h1>
+<div class="app-root">
+  <mat-drawer-container class="drawer-container">
+    <mat-drawer mode="side" opened class="drawer-content">
+      <div class="logo">ENERGO</div>
+      <mat-list class="navbar">
+        <mat-list-item *ngFor="let link of links" class="nav-item">
+          <mat-icon
+            aria-hidden="false"
+            aria-label="Example home icon"
+            [fontIcon]="link.icon"
+          >
+          </mat-icon>
+          <span style="color: white">
+            {{ link.name }}
+          </span>
+        </mat-list-item>
+      </mat-list>
+    </mat-drawer>
+    <mat-drawer-content>
+      <mat-toolbar>
+        <button
+          mat-icon-button
+          aria-label="Icon-button with notifications icon"
+        >
+          <mat-icon>notifications</mat-icon>
+        </button>
+        <button mat-icon-button aria-label="Icon-button with mail icon">
+          <mat-icon>mail</mat-icon>
+        </button>
+        <mat-divider vertical class="vertical-devider"></mat-divider>
+        <button mat-icon-button aria-label="Icon-button with mail icon">
+          <mat-icon>account_circle</mat-icon>
+        </button>
+        <span class="username"> Bullen Ziewcki </span>
+        <button mat-icon-button aria-label="Icon-button with mail icon">
+          <mat-icon>keyboard_arrow_down</mat-icon>
+        </button>
+      </mat-toolbar>
+      <div class="main-content">
+        <h1 class="title">Dashboard</h1>
+        <div class="d-flex">
+          <div class="energy-container">
+            <app-energy (building)="onClickedBuilding($event)"></app-energy>
+          </div>
+          <div class="alerts-container">
+            <app-alert [building]="currentBuilding"></app-alert>
+          </div>
+        </div>
+      </div>
+    </mat-drawer-content>
+  </mat-drawer-container>
+</div>

@@ -1,0 +1,118 @@
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 15px;
+  box-shadow: none;
+  background-color: transparent;
+
+  .table-header {
+    color: rgb(180, 180, 180);
+    font-size: 16px;
+  }
+
+  .name {
+    color: black;
+  }
+
+  th.mat-sort-header-sorted {
+    color: rgb(243, 243, 243);
+  }
+
+  .mat-mdc-row .mat-mdc-cell {
+    font-size: 16px;
+    cursor: pointer;
+    background-color: white;
+    color: rgb(180, 180, 180);
+    font-weight: 500;
+  }
+
+  td.mat-mdc-cell {
+    border-bottom: 3px solid transparent;
+    border-top: 3px solid transparent;
+  }
+
+  td.mat-mdc-cell:first-child {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-left: 3px solid transparent;
+  }
+
+  td.mat-mdc-cell:last-child {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-right: 3px solid transparent;
+  }
+
+  .mat-mdc-row {
+    box-shadow: rgba(99, 99, 99, 0.05) 0px 2px 8px 0px;
+
+    &:hover {
+      td.mat-mdc-cell {
+        border-bottom: 3px solid rgb(88, 189, 219);
+        border-top: 3px solid rgb(88, 189, 219);
+      }
+
+      td.mat-mdc-cell:first-child {
+        border-left: 3px solid rgb(88, 189, 219);
+      }
+
+      td.mat-mdc-cell:last-child {
+        border-right: 3px solid rgb(88, 189, 219);
+      }
+    }
+  }
+
+  .alerts-high,
+  .alerts-med,
+  .alerts-low {
+    padding: 8px 3px;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    width: 30px;
+
+    .inactive,
+    .active {
+      border-radius: 50%;
+      padding: 5px 10px;
+    }
+
+    .inactive {
+      background-color: rgb(235, 235, 235);
+    }
+  }
+
+  .alerts-high {
+    .active {
+      background-color: rgb(29, 78, 127);
+    }
+  }
+
+  .alerts-med {
+    .active {
+      background-color: rgb(246, 158, 61);
+    }
+  }
+
+  .alerts-low {
+    .active {
+      background-color: rgb(255, 72, 80);
+    }
+  }
+
+  .power {
+    font-weight: bold;
+    color: rgb(172, 200, 104);
+
+    small {
+      font-size: 10px;
+    }
+  }
+
+  .danger {
+    background-color: rgb(255, 215, 216);
+    color: rgb(255, 114, 120);
+    padding: 5px 15px;
+    border-radius: 10px;
+  }
+}
