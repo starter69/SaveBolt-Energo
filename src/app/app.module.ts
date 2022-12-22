@@ -15,9 +15,10 @@ import { MatSortModule } from "@angular/material/sort";
 import { MatGridListModule } from "@angular/material/grid-list";
 
 import { EnergyComponent } from "./energy/energy.component";
+import { AlertComponent } from "./alert/alert.component";
 
 @NgModule({
-  declarations: [AppComponent, EnergyComponent],
+  declarations: [AppComponent, EnergyComponent, AlertComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

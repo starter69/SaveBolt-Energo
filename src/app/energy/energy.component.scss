@@ -10,6 +10,10 @@ table {
     font-size: 16px;
   }
 
+  .name {
+    color: black;
+  }
+
   th.mat-sort-header-sorted {
     color: rgb(243, 243, 243);
   }
@@ -61,9 +65,11 @@ table {
   .alerts-high,
   .alerts-med,
   .alerts-low {
+    padding: 8px 3px;
     color: white;
     text-align: center;
     font-weight: bold;
+    width: 30px;
 
     .inactive,
     .active {

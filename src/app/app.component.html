@@ -37,13 +37,15 @@
         </button>
       </mat-toolbar>
       <div class="main-content">
-        <mat-grid-list cols="3">
-          <h1 class="title">Dashboard</h1>
-          <mat-grid-tile colspan="2">
-            <app-energy style="width: 100%"></app-energy>
-          </mat-grid-tile>
-          <mat-grid-tile colspan="1"> Alerts </mat-grid-tile>
-        </mat-grid-list>
+        <h1 class="title">Dashboard</h1>
+        <div class="d-flex">
+          <div class="energy-container">
+            <app-energy (building)="onClickedBuilding($event)"></app-energy>
+          </div>
+          <div class="alerts-container">
+            <app-alert [building]="currentBuilding"></app-alert>
+          </div>
+        </div>
       </div>
     </mat-drawer-content>
   </mat-drawer-container>

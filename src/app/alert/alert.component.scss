@@ -1,0 +1,39 @@
+.alerts {
+  width: 100%;
+  text-align: left;
+  padding: 10px;
+  color: rgb(180, 180, 180);
+  font-size: 16px;
+  font-weight: 500;
+
+  .detail {
+    margin-top: 30px;
+    padding: 10px 20px;
+
+    .info {
+      margin-top: 10px;
+      margin-bottom: 10px;
+      font-size: 14px;
+      width: 90%;
+      background-color: rgb(248, 248, 248);
+      padding: 10px;
+      color: black;
+
+      .name {
+        font-size: 16px;
+        margin-bottom: 5px;
+      }
+
+      .value {
+        width: 50%;
+      }
+
+      .time {
+        width: 50%;
+      }
+    }
+
+    box-shadow: rgba(99, 99, 99, 0.05) 0px 2px 8px 0px;
+    background-color: white;
+  }
+}

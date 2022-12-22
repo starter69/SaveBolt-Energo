@@ -14,7 +14,9 @@
     >
       <span class="table-header"> Name </span>
     </th>
-    <td mat-cell *matCellDef="let element">{{ element.Name }}</td>
+    <td mat-cell *matCellDef="let element">
+      <span class="name">{{ element.Name }}</span>
+    </td>
   </ng-container>
 
   <ng-container matColumnDef="Alerts">
@@ -26,30 +28,22 @@
     >
       <span class="table-header"> Alerts </span>
     </th>
-    <td mat-cell *matCellDef="let element">
-      <mat-grid-list cols="3">
-        <mat-grid-tile colspan="1">
-          <div class="alerts-high">
-            <div [class]="element.Alerts.high.count ? 'active' : 'inactive'">
-              {{ element.Alerts.high.count }}
-            </div>
-          </div>
-        </mat-grid-tile>
-        <mat-grid-tile colspan="1">
-          <div class="alerts-med">
-            <div [class]="element.Alerts.med.count ? 'active' : 'inactive'">
-              {{ element.Alerts.med.count }}
-            </div>
-          </div>
-        </mat-grid-tile>
-        <mat-grid-tile colspan="1">
-          <div class="alerts-low">
-            <div [class]="element.Alerts.low.count ? 'active' : 'inactive'">
-              {{ element.Alerts.low.count }}
-            </div>
-          </div>
-        </mat-grid-tile>
-      </mat-grid-list>
+    <td mat-cell *matCellDef="let element" style="display: flex">
+      <div class="alerts-high">
+        <div [class]="element.Alerts.high.count ? 'active' : 'inactive'">
+          {{ element.Alerts.high.count }}
+        </div>
+      </div>
+      <div class="alerts-med">
+        <div [class]="element.Alerts.med.count ? 'active' : 'inactive'">
+          {{ element.Alerts.med.count }}
+        </div>
+      </div>
+      <div class="alerts-low">
+        <div [class]="element.Alerts.low.count ? 'active' : 'inactive'">
+          {{ element.Alerts.low.count }}
+        </div>
+      </div>
     </td>
   </ng-container>
 
@@ -122,7 +116,7 @@
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr
     mat-row
-    (click)="handleClick(row)"
+    (click)="clickBuilding(row)"
     *matRowDef="let row; columns: displayedColumns"
     class="building-element"
   ></tr>
