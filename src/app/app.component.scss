@@ -1,9 +1,4 @@
 .app-root {
-  .mat-icon {
-    vertical-align: text-top;
-    margin-right: 10px;
-  }
-
   .drawer-container {
     height: 100vh;
     overflow-y: auto;
@@ -21,6 +16,8 @@
         .mat-icon {
           font-size: 26px;
           color: rgb(157, 157, 157);
+          vertical-align: text-top;
+          margin-right: 10px;
         }
 
         .vertical-devider {
@@ -49,13 +46,19 @@
 
       .navbar {
         margin-top: 20px;
-        color: white;
 
         .nav-item {
           font-size: 20px;
           font-weight: 500;
           width: 80%;
           margin: auto;
+
+          .mat-icon {
+            font-size: 26px;
+            color: white;
+            vertical-align: text-bottom;
+            margin-right: 10px;
+          }
 
           &:hover {
             border-radius: 10px;

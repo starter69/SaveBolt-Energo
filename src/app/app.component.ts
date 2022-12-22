@@ -1,8 +1,4 @@
 import { Component } from "@angular/core";
-import {
-  MatBottomSheet,
-  MatBottomSheetRef,
-} from "@angular/material/bottom-sheet";
 
 interface Link {
   name: string;

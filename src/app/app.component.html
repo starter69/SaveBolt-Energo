@@ -10,7 +10,9 @@
             [fontIcon]="link.icon"
           >
           </mat-icon>
-          {{ link.name }}
+          <span style="color: white">
+            {{ link.name }}
+          </span>
         </mat-list-item>
       </mat-list>
     </mat-drawer>
@@ -34,6 +36,8 @@
           <mat-icon>keyboard_arrow_down</mat-icon>
         </button>
       </mat-toolbar>
+
+      <app-energy></app-energy>
     </mat-drawer-content>
   </mat-drawer-container>
 </div>
